@@ -3,12 +3,13 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @import "compass";
-@import "compass/css3";
 @import "compass/reset";
 
 $primary-color: #330408;
 $element-size: 100px;
 $margin: 2px;
+$xo-height: 73px;
+$xo-width: 72px;
 
 body {
   color: $primary-color;
@@ -19,7 +20,7 @@ body {
 }
 
 .content {
-  background: url("../images/back.png") repeat;
+  background: url("../images/dark_wood.png") repeat;
   width: 100%;
   height: 1000px;
 }
@@ -29,16 +30,31 @@ body {
   height: 300px;
   position: relative;
   margin: 0 auto;
-  border: solid 3px $primary-color;
+//  border: solid 3px $primary-color;
 //  border-radius: 20px;
   top: 200px;
-  background: #ffffff;
+//  background: url("../images/dark_wood.png");
+}
+
+.xo, .xo_x, .xo_o {
+  width: $xo-width;
+  height: $xo-height;
+  position: relative;
+  margin: 10px auto;
+}
+
+.xo_x:hover {
+  background: url(../images/sprite/xo.png) 0 0;
+}
+
+.xo_o:hover {
+  background: url(../images/sprite/xo.png) -$xo-width 0;
 }
 
 .board_element {
   width: $element-size - $margin*2;
-  height: $element-size - $margin*3;
+  height: $element-size - $margin*2;
   display: inline-block;
-  background: #ffffbc;
-  margin: $margin;
+  background: url("../images/back.png");
+  margin: 0 $margin 0 $margin;
 }
