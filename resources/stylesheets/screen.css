@@ -99,23 +99,42 @@ body {
   height: 73px;
   position: relative;
   margin: 10px auto;
+  cursor: pointer;
 }
 
-/* line 46, ../sass/screen.scss */
-.xo_x:hover {
+/* line 51, ../sass/screen.scss */
+.xo_x {
   background: url(../images/sprite/xo.png) 0 0;
 }
 
-/* line 50, ../sass/screen.scss */
-.xo_o:hover {
+/* line 55, ../sass/screen.scss */
+.xo_o {
   background: url(../images/sprite/xo.png)-72px 0;
 }
 
-/* line 54, ../sass/screen.scss */
+/* line 59, ../sass/screen.scss */
 .board_element {
   width: 96px;
   height: 96px;
   display: inline-block;
   background: url("../images/back.png");
   margin: 0 2px 0 2px;
+}
+
+/* line 67, ../sass/screen.scss */
+.temp {
+  opacity: 0.3;
+}
+
+/* line 70, ../sass/screen.scss */
+.x_win, .o_win, .no_win {
+  display: none;
+}
+
+/* line 73, ../sass/screen.scss */
+.reset {
+  width: 300px;
+  text-align: center;
+  position: relative;
+  float: right;
 }

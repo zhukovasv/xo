@@ -41,13 +41,18 @@ body {
   height: $xo-height;
   position: relative;
   margin: 10px auto;
+  cursor: pointer;
 }
 
-.xo_x:hover {
+//.xo_x, .xo_o {
+//  display: none;
+//}
+
+.xo_x {
   background: url(../images/sprite/xo.png) 0 0;
 }
 
-.xo_o:hover {
+.xo_o {
   background: url(../images/sprite/xo.png) -$xo-width 0;
 }
 
@@ -57,4 +62,17 @@ body {
   display: inline-block;
   background: url("../images/back.png");
   margin: 0 $margin 0 $margin;
+}
+
+.temp {
+  opacity: 0.3;
+}
+.x_win, .o_win, .no_win {
+  display: none;
+}
+.reset {
+  width: 300px;
+  text-align: center;
+  position: relative;
+  float: right;
 }
