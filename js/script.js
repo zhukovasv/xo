@@ -18,7 +18,6 @@ $(function() {
     });
 
     $('.board_element').click(function(){
-        //console.log($(this).children('.playerMove'));
         if($(this).children('.playerMove').length == 0) {
             $(this).html('<div class = "playerMove ' + playerSign + '" id = "' + $(this).attr('id') + '/' +playerSign +'"></div>');
             if (player == 0) {
@@ -45,32 +44,54 @@ $(function() {
                 oArr.push(tempArr[0]);
             }
         });
-        //console.log(childNodes.length)
-        //x_win, .o_win, .no_win
-        if (movesCheck(xArr)) {
-            $('.x_win').show();
-            console.log('winner x');
-            winner = 0;
+        if(tempArr.length == 1) {
+            $('.toad').removeClass('start');
         }
-        if (movesCheck(oArr)) {
-            console.log('winner o');
-            $('.o_win').show();
-            winner = 1;
+        if (winOptions(xArr)) {
+            showWinner(0);
+            winner = 0;
+        }else {
+            if (winOptions(oArr)) {
+                showWinner(1);
+                winner = 1;
+            } else {
+                if ($('.playerMove').length == elementsNum * elementsNum){
+                    showWinner(2);
+                    winner = 2;
+                }
+            }
         }
     }
 
-    function movesCheck(arr) {
+    function showWinner(winner) {
+        switch (winner){
+            case 0:
+                $('.toad').addClass('winner');
+                $('.message div').html('Победитель <div class="res winner_x"></div>');
+                break;
+            case 1:
+                $('.toad').addClass('winner');
+                $('.message div').html('Победитель <div class="res winner_o"></div>');
+                break;
+            case 2:
+                $('.toad').addClass('no_winner');
+                $('.message div').html('Ничья! <div class="res winner_no"></div>');
+                break;
+        }
+    }
+
+    function winOptions(arr) {
         if( ($.inArray('0', arr) != -1) && ($.inArray('4', arr)!=-1) && ($.inArray('8', arr)!=-1)) {
             return true;
         }if( ($.inArray('0', arr) != -1) && ($.inArray('1', arr)!=-1) && ($.inArray('2', arr)!=-1)) {
             return true;
         }if( ($.inArray('3', arr) != -1) && ($.inArray('4', arr)!=-1) && ($.inArray('5', arr)!=-1)) {
             return true;
-        }if( ($.inArray('5', arr) != -1) && ($.inArray('7', arr)!=-1) && ($.inArray('8', arr)!=-1)) {
+        }if( ($.inArray('6', arr) != -1) && ($.inArray('7', arr)!=-1) && ($.inArray('8', arr)!=-1)) {
             return true;
-        }if( ($.inArray('2', arr) != -1) && ($.inArray('4', arr)!=-1) && ($.inArray('5', arr)!=-1)) {
+        }if( ($.inArray('2', arr) != -1) && ($.inArray('4', arr)!=-1) && ($.inArray('6', arr)!=-1)) {
             return true;
-        }if( ($.inArray('0', arr) != -1) && ($.inArray('3', arr)!=-1) && ($.inArray('5', arr)!=-1)) {
+        }if( ($.inArray('0', arr) != -1) && ($.inArray('3', arr)!=-1) && ($.inArray('6', arr)!=-1)) {
             return true;
         }if( ($.inArray('1', arr) != -1) && ($.inArray('4', arr)!=-1) && ($.inArray('7', arr)!=-1)) {
             return true;

@@ -93,7 +93,7 @@ body {
   top: 200px;
 }
 
-/* line 39, ../sass/screen.scss */
+/* line 36, ../sass/screen.scss */
 .xo, .xo_x, .xo_o {
   width: 72px;
   height: 73px;
@@ -102,17 +102,17 @@ body {
   cursor: pointer;
 }
 
-/* line 51, ../sass/screen.scss */
+/* line 44, ../sass/screen.scss */
 .xo_x {
   background: url(../images/sprite/xo.png) 0 0;
 }
 
-/* line 55, ../sass/screen.scss */
+/* line 48, ../sass/screen.scss */
 .xo_o {
   background: url(../images/sprite/xo.png)-72px 0;
 }
 
-/* line 59, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss */
 .board_element {
   width: 96px;
   height: 96px;
@@ -121,17 +121,78 @@ body {
   margin: 0 2px 0 2px;
 }
 
-/* line 67, ../sass/screen.scss */
+/* line 60, ../sass/screen.scss */
 .temp {
   opacity: 0.3;
 }
 
-/* line 70, ../sass/screen.scss */
-.x_win, .o_win, .no_win {
-  display: none;
+/* line 64, ../sass/screen.scss */
+.toad {
+  position: relative;
+  float: left;
+  width: 400px;
+  height: 450px;
+  margin: 20px 60px;
 }
 
-/* line 73, ../sass/screen.scss */
+/* line 72, ../sass/screen.scss */
+.message {
+  width: 200px;
+  height: 180px;
+  position: relative;
+  float: right;
+  background: url("../images/info_bubble.png") top right no-repeat;
+}
+
+/* line 80, ../sass/screen.scss */
+.message .text {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  width: 165px;
+  float: right;
+  margin: 30px 0;
+}
+
+/* line 90, ../sass/screen.scss */
+.start {
+  background: url("../images/start.png") no-repeat 0 120px;
+}
+
+/* line 94, ../sass/screen.scss */
+.winner {
+  background: url("../images/winner.png") no-repeat 0 120px;
+}
+
+/* line 97, ../sass/screen.scss */
+.no_winner {
+  background: url("../images/no_winner.png") no-repeat 0 120px;
+}
+
+/* line 101, ../sass/screen.scss */
+.res {
+  width: 40px;
+  height: 40px;
+  margin: 10px auto;
+}
+
+/* line 107, ../sass/screen.scss */
+.winner_x {
+  background: url("../images/sprite/xo_min.png") no-repeat;
+}
+
+/* line 108, ../sass/screen.scss */
+.winner_o {
+  background: url("../images/sprite/xo_min.png") -40px 0 no-repeat;
+}
+
+/* line 109, ../sass/screen.scss */
+.winner_no {
+  background: url("../images/star.png") no-repeat;
+}
+
+/* line 111, ../sass/screen.scss */
 .reset {
   width: 300px;
   text-align: center;
